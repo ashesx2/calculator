@@ -20,7 +20,8 @@
     padding: 5px;
 }
 
-.display {
+/* Max 9 numbers*/
+#display {
     font-size: 75px;
     text-align: end;
 }
