@@ -99,14 +99,29 @@ function saveOperation()
 
 }
 
-function clearDisplay()
+function clear()
 {
-    // When C is clicked, it clears the current screen to 0
+    currentVal = 0;
+    displayVal = "0";
+    updateDisplay(displayVal);
+    console.log("APIN");
 }
 
 function clearAll()
 {
-    // When AC is clicked, it clears all operations and inputs
+    while (operations.length)
+    {
+        operations.pop();
+    }
+
+    while (inputs.length)
+    {
+        inputs.pop();
+    }
+
+    displayVal = "0";
+    currentVal = 0;
+    updateDisplay(displayVal);
 }
 
 let displayVal = "0";
@@ -123,6 +138,7 @@ operatorButtons.forEach(operator => operator.addEventListener("click", saveOpera
 
 const equalsButton = document.getElementById("equals");
 equalsButton.addEventListener("click", function() {
+    if (inputs.length == 0) return;
     inputs.push(Number(displayVal))
     operate(operations[0], inputs[0], inputs[1]);
     let result = operate(operations[0], inputs[0], inputs[1]);
@@ -134,3 +150,32 @@ equalsButton.addEventListener("click", function() {
     updateDisplay(result);
     currentVal = 0;
 });
+
+const clearAllButton = document.getElementById("clear-all");
+clearAllButton.addEventListener("click", clearAll);
+
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", clear);
+
+const decimalButton = document.getElementById("decimal");
+decimalButton.disabled = false;
+decimalButton.addEventListener("click", function() {
+    displayVal += ".";
+    updateDisplay(displayVal);
+    decimalButton.disabled = true;
+});
+
+const negationButton = document.getElementById("negation");
+negationButton.addEventListener("click", function() {
+    let newVal = "-";
+    displayVal = newVal.concat(displayVal);
+    updateDisplay(displayVal);
+});
+
+const percentButton = document.getElementById("percent");
+percentButton.addEventListener("click", function() {
+    let percentNum = Number(displayVal);
+    percentNum /= 100;
+    displayVal = percentNum.toString();
+    updateDisplay(displayVal);
+})
