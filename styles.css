@@ -1,14 +1,17 @@
 html {
-    background: rgb(232, 208, 255);
+    background: rgb(255, 255, 255);
+    font-family: 'PT Mono', monospace;
 }
 .wrapper {
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin: 5em;
 }
 
 .calculator {
-    height: 560px;
-    width: 400px;
+    height: 550px;
+    width: 410px;
     border: thin solid black;
     border-radius: 10px;
     background-color: grey;
@@ -16,23 +19,22 @@ html {
 }
 
 .display-container {
-    height: 80px;
-    width: 350px;
+    height: 70px;
+    width: 360px;
     background-color: white;
     border: thin solid black;
     margin: 20px auto auto auto;
     padding: 5px;
 }
 
-/* Max 9 numbers*/
 #display {
-    font-size: 75px;
+    font-size: 65px;
     text-align: end;
 }
 
 .button-row {
-    margin: 15px 15px 0px 15px;
-    width: 380px;
+    margin: 15px 0px 0px 16px;
+    width: 385px;
 }
 
 .button-wrapper {
@@ -42,7 +44,7 @@ html {
 
 .numpad-container {
     margin: 0px 0px 0px 15px;
-    width: 280px;
+    width: 290px;
 }
 
 .button-column {
@@ -53,7 +55,7 @@ html {
 button {
     height: 80px;
     width: 85px;
-    margin: 2px;
+    margin: 1px;
     font-size: 20px;
     background: white;
     border: thin solid grey;
@@ -62,4 +64,17 @@ button {
 
 button:hover {
     background: lightgray;
+}
+
+.operator {
+    background:rgb(165, 207, 255);
+}
+.operator:hover {
+    background:rgb(146, 183, 224);
+}
+.config {
+    background: rgb(250, 204, 229);
+}
+.config:hover {
+    background: rgb(219, 177, 200);
 }

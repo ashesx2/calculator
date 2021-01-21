@@ -167,6 +167,7 @@ decimalButton.addEventListener("click", function() {
 
 const negationButton = document.getElementById("negation");
 negationButton.addEventListener("click", function() {
+    // check if already negative
     let newVal = "-";
     displayVal = newVal.concat(displayVal);
     updateDisplay(displayVal);
