@@ -10,21 +10,21 @@ html {
 }
 
 .calculator {
+    background-color: grey;
+    box-shadow: 0 0 20px grey;
     height: 550px;
     width: 410px;
     border: thin solid black;
     border-radius: 10px;
-    background-color: grey;
-    box-shadow: 0 0 20px grey;
 }
 
 .display-container {
+    background-color: white;
     height: 70px;
     width: 360px;
-    background-color: white;
-    border: thin solid black;
     margin: 20px auto auto auto;
     padding: 5px;
+    border: thin solid black;
 }
 
 #display {
@@ -53,11 +53,11 @@ html {
 }
 
 button {
+    background: white;
+    font-size: 20px;
     height: 80px;
     width: 85px;
     margin: 1px;
-    font-size: 20px;
-    background: white;
     border: thin solid grey;
     border-radius: 10px;
 }
@@ -66,12 +66,13 @@ button:hover {
     background: lightgray;
 }
 
-.operator {
+.operator, #equals {
     background:rgb(165, 207, 255);
 }
-.operator:hover {
+.operator:hover, #equals:hover {
     background:rgb(146, 183, 224);
 }
+
 .config {
     background: rgb(250, 204, 229);
 }
